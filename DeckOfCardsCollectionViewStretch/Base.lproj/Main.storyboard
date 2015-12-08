@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mry-OW-WZX">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="v1r-Zz-xLW">
+            <objects>
+                <tableViewController id="ajk-ad-feH" customClass="DeckOfCardsTableViewController" customModule="DeckOfCardsCollectionViewStretch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="254" sectionHeaderHeight="28" sectionFooterHeight="28" id="8PP-Og-EKg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardSuitCell" rowHeight="254" id="Kue-At-1Ee" customClass="DeckSuitTableViewCell" customModule="DeckOfCardsCollectionViewStretch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="254"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kue-At-1Ee" id="Kd3-0L-hGd">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="253"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xoy-UL-d8V" customClass="deckSuitCollectionView" customModule="DeckOfCardsCollectionViewStretch" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="253"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="asg-XW-WbM">
+                                                <size key="itemSize" width="166" height="240"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCell" id="meZ-3n-G8d" customClass="CardCollectionViewCell" customModule="DeckOfCardsCollectionViewStretch" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="7" width="166" height="240"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="166" height="240"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VBv-fA-eIV">
+                                                                <rect key="frame" x="0.0" y="0.0" width="166" height="240"/>
+                                                                <animations/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstItem="VBv-fA-eIV" firstAttribute="top" secondItem="meZ-3n-G8d" secondAttribute="top" id="BFZ-Yl-bsM"/>
+                                                        <constraint firstAttribute="bottom" secondItem="VBv-fA-eIV" secondAttribute="bottom" id="IO7-ht-fp7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="VBv-fA-eIV" secondAttribute="trailing" id="hb8-6b-eXF"/>
+                                                        <constraint firstItem="VBv-fA-eIV" firstAttribute="leading" secondItem="meZ-3n-G8d" secondAttribute="leading" id="wUj-EA-lUh"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="cardImageView" destination="VBv-fA-eIV" id="Z7s-kr-Nr0"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="ajk-ad-feH" id="eVz-Bb-mog"/>
+                                                <outlet property="delegate" destination="ajk-ad-feH" id="Tpl-NV-oVP"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Xoy-UL-d8V" secondAttribute="trailing" id="9Ka-8H-CL4"/>
+                                        <constraint firstAttribute="bottom" secondItem="Xoy-UL-d8V" secondAttribute="bottom" id="rQT-vU-OP0"/>
+                                        <constraint firstItem="Xoy-UL-d8V" firstAttribute="leading" secondItem="Kd3-0L-hGd" secondAttribute="leading" id="uM6-er-Ce6"/>
+                                        <constraint firstItem="Xoy-UL-d8V" firstAttribute="top" secondItem="Kd3-0L-hGd" secondAttribute="top" id="xcn-KG-EDg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="collectionView" destination="Xoy-UL-d8V" id="9vz-TF-W06"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ajk-ad-feH" id="BQW-zA-GrU"/>
+                            <outlet property="delegate" destination="ajk-ad-feH" id="Kq7-jY-Dk4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="0Z1-tt-FUE"/>
+                    <connections>
+                        <segue destination="ydD-Yo-urq" kind="show" identifier="ToCardDetailView" id="ukJ-aj-d4n"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2r-Pe-fie" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="356"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="ZZw-i2-2bl">
+            <objects>
+                <viewController id="ydD-Yo-urq" customClass="CardDetailViewController" customModule="DeckOfCardsCollectionViewStretch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lca-Ul-462"/>
+                        <viewControllerLayoutGuide type="bottom" id="KeB-bC-qiz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DvC-gK-fC5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAz-0t-ejk">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="536" id="o4D-ww-1p7"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="o4D-ww-1p7"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KeB-bC-qiz" firstAttribute="top" secondItem="aAz-0t-ejk" secondAttribute="bottom" id="3St-lg-LwB"/>
+                            <constraint firstItem="aAz-0t-ejk" firstAttribute="top" secondItem="lca-Ul-462" secondAttribute="bottom" id="aaV-Wk-BWJ"/>
+                            <constraint firstAttribute="trailing" secondItem="aAz-0t-ejk" secondAttribute="trailing" id="hzi-jM-OyF"/>
+                            <constraint firstItem="aAz-0t-ejk" firstAttribute="centerY" secondItem="DvC-gK-fC5" secondAttribute="centerY" id="nPo-8X-5fb"/>
+                            <constraint firstItem="aAz-0t-ejk" firstAttribute="leading" secondItem="DvC-gK-fC5" secondAttribute="leading" id="uHw-Mx-c9x"/>
+                            <constraint firstItem="aAz-0t-ejk" firstAttribute="centerX" secondItem="DvC-gK-fC5" secondAttribute="centerX" id="wQ4-G4-91j"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aaV-Wk-BWJ"/>
+                                <exclude reference="hzi-jM-OyF"/>
+                                <exclude reference="uHw-Mx-c9x"/>
+                                <exclude reference="3St-lg-LwB"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="1Ft-0h-2e6"/>
+                    <connections>
+                        <outlet property="cardImage" destination="aAz-0t-ejk" id="vcs-sd-ioU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJg-NI-ZrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1592" y="356"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="isU-J8-Axy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mry-OW-WZX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9vB-pt-5te">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ajk-ad-feH" kind="relationship" relationship="rootViewController" id="l9R-fK-JV0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yC-UE-vE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="196" y="356"/>
+        </scene>
+        <!--Deck Of Cards Collection View Controller-->
+        <scene sceneID="ac9-Qj-CJj">
+            <objects>
+                <collectionViewController id="dRo-k3-uah" customClass="DeckOfCardsCollectionViewController" customModule="DeckOfCardsCollectionViewStretch" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rsH-3d-qda">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ufO-U1-4Xr">
+                            <size key="itemSize" width="122" height="125"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="3Lb-tN-QcD" customClass="CardCollectionViewCell" customModule="DeckOfCardsCollectionViewStretch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="122" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="122" height="125"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="dRo-k3-uah" id="gDi-xB-tES"/>
+                            <outlet property="delegate" destination="dRo-k3-uah" id="Bde-7n-af1"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mA3-FP-99O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="1044"/>
+        </scene>
+    </scenes>
+</document>
